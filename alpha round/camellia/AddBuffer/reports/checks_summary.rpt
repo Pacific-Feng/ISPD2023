@@ -1,0 +1,15 @@
+ISPD23 -- LEC: Equivalence issues: 0
+ISPD23 -- LEC: Unreachable points issues: 0
+ISPD23 -- LEC: Unassigned nets issues: 0
+ISPD23 -- LEC: Undriven pins issues: 0
+ISPD23 -- LEC: Net output floating issues: 0
+ISPD23 -- LEC: Open ports issues: 0
+ISPD23 -- LEC: Input port not fully used issues: 0
+ISPD23 -- LEC: Unused wire issues: 0
+ISPD23 -- Innovus: Basic routing issues: 470
+ISPD23 -- Innovus: Module pin issues: 0
+ISPD23 -- Innovus: Placement and/or routing issues: 21
+ISPD23 -- Innovus: PDN stripes checks failures: 0
+ISPD23 -- Innovus: DRC issues: 0
+ISPD23 -- Innovus: Timing issues for setup: 0
+ISPD23 -- Innovus: Timing issues for hold: 0
