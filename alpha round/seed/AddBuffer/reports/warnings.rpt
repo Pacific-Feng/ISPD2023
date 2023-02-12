@@ -1,0 +1,8 @@
+ISPD23 -- WARNING: LEC: Unassigned nets issues: 2 -- see lec.log for more details.
+ISPD23 -- WARNING: LEC: Undriven pins issues: 5 -- see lec.log for more details.
+ISPD23 -- WARNING: LEC: Net output floating issues: 43 -- see lec.log for more details.
+ISPD23 -- WARNING: LEC: Open ports issues: 1 -- see lec.log for more details.
+ISPD23 -- WARNING: LEC: Input port not fully used issues: 2 -- see lec.log for more details.
+ISPD23 -- WARNING: LEC: Unused wire issues: 76 -- see lec.log for more details.
+ISPD23 -- WARNING: Innovus: Basic routing issues: 686 -- see *.conn.rpt and floating_signals.rpt for more details.
+ISPD23 -- WARNING: Innovus: Placement and/or routing issues: 21 -- see check_design.rpt and check.logv for more details.
