@@ -6,11 +6,11 @@ Begin: Design checking
 -----------------------------------------------------------------------------------------------------------------------------
 | IMPPP-4418        | error     | 21          | The via for net %s in DPT layer %s does not align with the tracks at %f %f. |
 -----------------------------------------------------------------------------------------------------------------------------
-		(Real time: 0:00:01.0, Memory: 1792.2M)
+		(Real time: 0:00:00.0, Memory: 1351.1M)
 
         Checking 'route' category...
         No issues found during checks.
-		(Real time: 0:00:00.0, Memory: 1926.6M)
+		(Real time: 0:00:01.0, Memory: 1514.7M)
 
 **INFO: Identified 21 error(s) and 0 warning(s) during 'check_design -type {place route}'.
 End: Design checking

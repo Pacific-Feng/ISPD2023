@@ -7,8 +7,8 @@
 ###############################################################
 current_design SEED
 create_clock [get_ports {CLK}]  -name clk -period 1020.000000 -waveform {0.000000 510.000000}
-set_propagated_clock  [get_clocks {clk}]
-set_propagated_clock  [get_ports {CLK}]
+#set_propagated_clock  [get_clocks {clk}]
+#set_propagated_clock  [get_ports {CLK}]
 set_input_delay -add_delay 1 -clock [get_clocks {clk}] [get_ports {Din[102]}]
 set_input_delay -add_delay 1 -clock [get_clocks {clk}] [get_ports {Kin[102]}]
 set_input_delay -add_delay 1 -clock [get_clocks {clk}] [get_ports {Kin[81]}]

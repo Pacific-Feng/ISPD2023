@@ -1,0 +1,512 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+Options:	-nowin -stylus -files scripts/check_camellia.tcl -log check 
+Date:		Mon Feb 13 01:59:04 2023
+Host:		ic51 (x86_64 w/Linux 3.10.0-1160.25.1.el7.x86_64) (16cores*64cpus*Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz 22528KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[01:59:04.321945] Configured Lic search path (20.02-s004): 5280@lstc
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_266073_ic51_g100501528_EVViIv.
+
+Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source scripts/check_camellia.tcl
+#@ Begin verbose source (pre): source scripts/check_camellia.tcl
+@file 1: ####
+@file 2: #
+@file 3: # Script for ISPD'23 contest. Johann Knechtel, NYUAD, in collaboration with Mohammad Eslami and Samuel Pagliarini, TalTech
+@file 4: #
+@file 5: ####
+@file 6:
+@file 7: ####
+@file 8: # general settings
+@file 9: ####
+@file 10:
+@file 11: set_multi_cpu_usage -local_cpu 24
+@file 12:
+@file 13: set_db design_process_node 7
+##  Process: 7             (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 7nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+@file 14: set_db design_tech_node N7
+##  Process: 7             (User Set)               
+##     Node: N7            (User Set)           
+@file 15:
+@file 16: set lef_path "ASAP7/asap7_tech_4x_201209.lef ASAP7/asap7sc7p5t_28_L_4x_220121a.lef ASAP7/asap7sc7p5t_28_SL_4x_220121a.lef"
+@file 17: set def_path camellia_addBuffer.def
+@file 18: set netlist_path camellia_addBuffer.v
+@file 19:
+@file 20: ####
+@file 21: # init
+@file 22: ####
+@file 23:
+@file 24: read_physical -lefs $lef_path
+
+Loading LEF file ASAP7/asap7_tech_4x_201209.lef ...
+
+Loading LEF file ASAP7/asap7sc7p5t_28_L_4x_220121a.lef ...
+Set DBUPerIGU to M1 pitch 576.
+
+Loading LEF file ASAP7/asap7sc7p5t_28_SL_4x_220121a.lef ...
+
+viaInitial starts at Mon Feb 13 01:59:21 2023
+viaInitial ends at Mon Feb 13 01:59:21 2023
+@file 25: read_netlist $netlist_path
+#% Begin Load netlist data ... (date=02/13 01:59:21, mem=660.8M)
+*** Begin netlist parsing (mem=834.9M) ***
+Created 0 new cells from 0 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'camellia_addBuffer.v'
+
+*** Memory Usage v#1 (Current mem = 839.930M, initial mem = 396.367M) ***
+*** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=839.9M) ***
+#% End Load netlist data ... (date=02/13 01:59:21, total cpu=0:00:00.1, real=0:00:00.0, peak res=667.5M, current mem=667.4M)
+Top level cell is Camellia.
+Hooked 0 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell Camellia ...
+*** Netlist is unique.
+Set DBUPerIGU to techSite asap7sc7p5t width 864.
+** info: there are 425 modules.
+** info: there are 10118 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 897.359M, initial mem = 396.367M) ***
+@file 26: # preserve shapes/layout as is
+@file 27: read_def $def_path -preserve_shape
+Reading DEF file 'camellia_addBuffer.def', current time is Mon Feb 13 01:59:21 2023 ...
+**WARN: (IMPDF-66):	Floor plan has not been initialized. Please use 'loadConfig' or 'loadDesign' to load design.
+--- DIVIDERCHAR '/'
+--- UnitsPerDBU = 1.0000
+Start create_tracks
+--- DIEAREA (0 0) (632960 632960)
+defIn read 10000 lines...
+defIn read 20000 lines...
+Extracting standard cell pins and blockage ...... 
+**WARN: (IMPTR-2108):	For layer M10, the gaps of 11 out of 11 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+Type 'man IMPTR-2108' for more detail.
+ As a result, your trialRoute congestion could be incorrect.
+Pin and blockage extraction finished
+Extracting macro/IO cell pins and blockage ...... 
+Pin and blockage extraction finished
+defIn read 30000 lines...
+defIn read 40000 lines...
+defIn read 50000 lines...
+defIn read 60000 lines...
+defIn read 70000 lines...
+defIn read 80000 lines...
+defIn read 90000 lines...
+defIn read 100000 lines...
+defIn read 110000 lines...
+defIn read 120000 lines...
+defIn read 130000 lines...
+defIn read 140000 lines...
+defIn read 150000 lines...
+defIn read 160000 lines...
+defIn read 170000 lines...
+defIn read 180000 lines...
+defIn read 190000 lines...
+defIn read 200000 lines...
+DEF file 'camellia_addBuffer.def' is parsed, current time is Mon Feb 13 01:59:21 2023.
+**WARN: (IMPTR-2108):	For layer M10, the gaps of 11 out of 11 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+Type 'man IMPTR-2108' for more detail.
+ As a result, your trialRoute congestion could be incorrect.
+Updating the floorplan ...
+@file 28:
+@file 29: init_design
+Extraction setup Started 
+@file 30:
+@file 31: # delete all kinds of fillers (decaps, tap cells, filler cells)
+@file 32: delete_filler -cells [ get_db -u [ get_db insts -if { .is_physical } ] .base_cell.name ]
+Deleted 1620 physical insts (cell TAPCELL_ASAP7_75t_L / prefix -).
+@file 33:
+@file 34: ####
+@file 35: # design checks
+@file 36: ####
+@file 37:
+@file 38: # covers routing issues like dangling wires, floating metals, open pins, etc.; check *.conn.rpt
+@file 39: # NOTE false positives for dangling VDD, VSS at M1
+@file 40: check_connectivity -error 100000 -warning 100000 -check_wire_loops
+VERIFY_CONNECTIVITY use new engine.
+
+******** Start: VERIFY CONNECTIVITY ********
+Start Time: Mon Feb 13 01:59:21 2023
+
+Design Name: Camellia
+Database Units: 4000
+Design Boundary: (0.0000, 0.0000) (158.2400, 158.2400)
+Error Limit = 100000; Warning Limit = 100000
+Check all nets
+Use 24 pthreads
+Net VDD: dangling Wire.
+Net VSS: dangling Wire.
+
+Begin Summary 
+    468 Problem(s) (IMPVFC-94): The net has dangling wire(s).
+    468 total info(s) created.
+End Summary
+
+End Time: Mon Feb 13 01:59:22 2023
+Time Elapsed: 0:00:01.0
+
+******** End: VERIFY CONNECTIVITY ********
+  Verification Complete : 468 Viols.  0 Wrngs.
+  (CPU Time: 0:00:01.0  MEM: 22.000M)
+
+@file 41: mv *.conn.rpt reports/
+@file 42:
+@file 43: # covers IO pins; check *.checkPin.rpt
+@file 44: check_pin_assignment
+#% Begin check_pin_assignment (date=02/13 01:59:22, mem=737.6M)
+Checking pins of top cell Camellia ... completed
+
+===========================================================================================================================
+                                                checkPinAssignment Summary
+===========================================================================================================================
+Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+===========================================================================================================================
+Camellia    |     0 |    393 |    393 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+TOTAL       |     0 |    393 |    393 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+===========================================================================================================================
+#% End check_pin_assignment (date=02/13 01:59:22, total cpu=0:00:00.1, real=0:00:00.0, peak res=758.4M, current mem=757.6M)
+@file 45: mv *.checkPin.rpt reports/
+@file 46:
+@file 47: # covers routing DRCs; check *.geom.rpt
+@file 48: check_drc -limit 100000
+#-limit 100000                           # int, default=100000, user setting
+#-check_same_via_cell true               # bool, default=false, user setting
+ *** Starting Verify DRC (MEM: 1108.9) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+**WARN: (IMPVFG-1198):	The number of CPUs requested 24 is larger than that check_drc used 9. In Multithreading mode, the number of CPUs check_drc used is not larger than the number of subareas.
+ Use 'set_multi_cpu_usage -local_cpu' to specify the less cup number if the verify area is not large.
+  VERIFY DRC ...... Using new threading
+ VERIFY DRC ...... Thread : 8 finished.
+ VERIFY DRC ...... Thread : 0 finished.
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:20.4  ELAPSED TIME: 9.00  MEM: 953.6M) ***
+
+@file 49: mv *.geom.rpt reports/
+@file 50:
+@file 51: # covers placement and routing issues
+@file 52: # NOTE false positives for VDD, VSS vias at M4, M5, M6; report file has incomplete info, full details are in check.logv
+@file 53: check_design -type {place route} > reports/check_design.rpt
+@file 54:
+@file 55: # custom checks for PDN stripes
+@file 56: set out [open reports/check_stripes.rpt w]
+@file 57: puts $out "PDN stripes checks"
+@file 58: puts $out "=================="
+@file 59: close $out
+@file 60: source scripts/check_stripes_area_stylus.tcl
+#@ Begin verbose source scripts/check_stripes_area_stylus.tcl (pre)
+@file 1: ##########################################
+@file 2: #
+@file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+@file 4: #
+@file 5: # Script for checking the power stripes based on box area
+@file 6: # to be used in stylus version
+@file 7: # Date: 2022.12.29
+@file 8: # ISPD'23 Contest
+@file 9: #
+@file 10: ##########################################
+@file 11:
+@file 12: set out [open reports/check_stripes.rpt a]
+@file 13: puts $out "Check by area"
+@file 14: puts $out "-------------"
+@file 15:
+@file 16: # power net names
+@file 17: set p_names {VDD VSS}
+@file 18:
+@file 19: set c_flag "valid"
+@file 20:
+@file 21: # the loop strats from M2 layer and continue checking until M9
+@file 22: for {set j 2} {$j < 10} {incr j} {
+
+  set stripe_area  ""
+  set refrence ""
+
+ for {set k 0} {$k < 2} {incr k} {
+select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+ 
+ set stripe_area [get_db selected .area]
+
+ for {set i 0} {$i < [expr [llength $stripe_area] - 1]} {incr i} {
+    if {$i == 0} {
+     set refrence [lindex $stripe_area $i]
+    }
+    if {($refrence) == [lindex $stripe_area [ expr $i + 1]]} {
+     set compare "valid"
+    } else {
+      set compare "false"
+	  set c_flag "false"
+      }
+ }
+  deselect_obj -all
+# detailed report 
+  puts $out "M$j ---- [lindex $p_names $k]  ---> $compare"
+ }
+}
+@file 48:
+@file 49: puts $out "Final result: $c_flag" 
+@file 50: puts $out ""
+@file 51:
+@file 52: close $out
+#@ End verbose source scripts/check_stripes_area_stylus.tcl
+@file 61: source scripts/check_stripes_coors_stylus.tcl
+#@ Begin verbose source scripts/check_stripes_coors_stylus.tcl (pre)
+@file 1: ##########################################
+@file 2: #
+@file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+@file 4: #
+@file 5: # Script for checking the power stripes based on coordinates
+@file 6: # to be used in stylus version
+@file 7: # Date: 2022.12.28
+@file 8: # ISPD'23 Contest
+@file 9: #
+@file 10: ##########################################
+@file 11:
+@file 12: set out [open reports/check_stripes.rpt a]
+@file 13: puts $out "Check by coordinates"
+@file 14: puts $out "--------------------"
+@file 15:
+@file 16: # power net names
+@file 17: set p_names {VDD VSS}
+@file 18:
+@file 19: set c_flag "valid"
+@file 20:
+@file 21: # the loop strats from M2 layer and continue checking until M9
+@file 22: for {set j 2} {$j < 10} {incr j} {
+
+ set coors  ""
+ set sub_result ""
+ set refrence ""
+
+# a loop for selecting VDD and VSS for each metal layer 
+ for {set k 0} {$k < 2} {incr k} {
+select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+# the stripes on the even layers are horizontal while the rest are vertical
+ if {[expr $j / 2] == 0} {
+# if the stripe is horizontal, we capture the lly coordinates of the stripes
+  set coors [get_db selected .rect.ll.y]
+  } else {
+# if the stripe is vertical, we capture the llx coordinates of the stripes
+   set coors [get_db selected .rect.ll.x]
+   }
+
+ set coors [lsort -dictionary $coors]
+ for {set i 0} {$i < [expr [llength $coors] - 1]} {incr i} {
+  set sub_result [expr [lindex $coors [ expr $i + 1]] - [lindex $coors $i] ]
+     if {$i == 0} {
+      set refrence [expr int($sub_result)]
+     }
+# here we compare the integer part for each coordinate pair to measure the distance
+     if {[expr int($sub_result)] == $refrence} {
+      set compare "valid"
+     } else {
+       set compare "false"
+       set c_flag "false"
+	   puts " [expr int($sub_result)] != $refrence"
+   	  }
+ }
+ deselect_obj -all
+# detailed report 
+ puts $out "M$j ---- [lindex $p_names $k]  ---> $compare ---- $c_flag"
+ }
+}
+@file 60:
+@file 61: puts $out "Final result: $c_flag" 
+@file 62: puts $out ""
+@file 63:
+@file 64: close $out
+#@ End verbose source scripts/check_stripes_coors_stylus.tcl
+@file 62: source scripts/check_stripes_width_stylus.tcl
+#@ Begin verbose source scripts/check_stripes_width_stylus.tcl (pre)
+@file 1: ##########################################
+@file 2: #
+@file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+@file 4: #
+@file 5: # Script for checking the power stripes based on box width
+@file 6: # to be used in stylus version
+@file 7: # Date: 2022.12.29
+@file 8: # ISPD'23 Contest
+@file 9: #
+@file 10: ##########################################
+@file 11:
+@file 12: set out [open reports/check_stripes.rpt a]
+@file 13: puts $out "Check by box width"
+@file 14: puts $out "------------------"
+@file 15:
+@file 16: # power net names
+@file 17: set p_names {VDD VSS}
+@file 18:
+@file 19: set c_flag "valid"
+@file 20:
+@file 21: # the loop strats from M2 layer and continue checking until M9
+@file 22: for {set j 2} {$j < 10} {incr j} {
+
+ set coors  ""
+ set sub_result ""
+ set refrence ""
+
+# a loop for selecting VDD and VSS for each metal layer 
+ for {set k 0} {$k < 2} {incr k} {
+select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+
+  set stripe_wid [get_db selected .rect.width]
+
+  for {set i 0} {$i < [expr [llength $stripe_wid] - 1]} {incr i} {
+    if {$i == 0} {
+     set refrence [lindex $stripe_wid $i]
+    }
+    if {($refrence) == [lindex $stripe_wid [ expr $i + 1]]} {
+     set compare "valid"
+    } else {
+      set compare "false"
+	  set c_flag "false"
+      }
+    }
+	 deselect_obj -all
+# detailed report 
+  puts $out "M$j ---- [lindex $p_names $k]  ---> $compare"
+ } 
+}
+@file 50:
+@file 51: puts $out "Final result: $c_flag" 
+@file 52: puts $out ""
+@file 53:
+@file 54: close $out
+#@ End verbose source scripts/check_stripes_width_stylus.tcl
+@file 63:
+@file 64: ####
+@file 65: # security evaluation: 1st order, alpha round
+@file 66: ####
+@file 67:
+@file 68: # exploitable regions
+@file 69: source scripts/exploitable_regions.tcl
+#@ Begin verbose source scripts/exploitable_regions.tcl (pre)
+@file 1: ####
+@file 2: #
+@file 3: # Script for ISPD'23 contest.
+@file 4: #
+@file 5: # The baseline code, that is for extraction of cell placement in rows and sites, was provided as courtesy by team
+@file 6: # CUEDA (The Chinese University of Hong Kong; Fangzhou Wang, Qijing Wang, Bangqi Fu, Shui Jiang, Xiaopeng Zhang,
+@file 7: # Tsung-Yi Ho, Evangeline F.Y. Young) during ISPD'22 contest. Many thanks to them!
+@file 8: #
+@file 9: # Further edits by Johann Knechtel, NYUAD
+@file 10: #
+@file 11: ####
+@file 12:
+@file 13: set out [open "placement.info" w+]
+@file 14:
+@file 15: # extract design geometries
+@file 16: set core_rect [get_db designs .core_bbox]
+@file 17: set x_l_core [lindex $core_rect 0 0]
+@file 18: set y_l_core [lindex $core_rect 0 1]
+@file 19: set x_unit [lindex [get_db sites .size] 0 0]
+@file 20: set y_unit [lindex [get_db sites .size] 0 1]
+@file 21:
+@file 22: puts $out "CORE_BBOX [lindex [get_db designs .core_bbox] 0]"
+@file 23: puts $out "NUM_ROWS [llength [get_db rows]]"
+@file 24: puts $out "NUM_SITES_PER_ROW [get_db [lindex [get_db rows] 0] .num_x]"
+@file 25: puts $out "SITE_WIDTH $x_unit "
+@file 26: puts $out "SITE_HEIGHT $y_unit "
+@file 27:
+@file 28: # extract cell placement; note that physical cells (decaps, fillers, tapcells) are already deleted at this point
+@file 29: foreach cell [get_db insts] {
+
+	set cell_rect [lindex [get_db $cell .bbox] 0]
+
+	set x_pos_core [expr [lindex $cell_rect 0] - $x_l_core]
+	set y_pos_core [expr [lindex $cell_rect 1] - $y_l_core]
+	set x_width [expr [lindex $cell_rect 2] - [lindex $cell_rect 0]]
+
+	set x_idx [expr int(($x_pos_core + 0.001) / $x_unit)]
+	set y_idx [expr int(($y_pos_core + 0.001) / $y_unit)]
+	set width [expr int(($x_width + 0.001) / $x_unit)]
+
+	puts $out "[get_db $cell] $x_idx $y_idx $width"
+}
+@file 43: close $out
+@file 44:
+@file 45: # external call, log lines printed out as they come in, via a pipe construct
+@file 46: # https://stackoverflow.com/a/35398439
+@file 47: set pipe [open |[list scripts/exploitable_regions.bin placement.info 20 | tee reports/exploitable_regions.rpt 2>@1]]
+@file 48: while {[gets $pipe line] >= 0} {
+	puts "$line"
+}
+----------------------------
+Evaluate exploitable regions
+----------------------------
+ Parameters provided: place_file_name = "placement.info", exploitable_region_size_threshold = "20"
+ Parsing placement info file: placement.info
+ Finish parsing.
+  Num of rows: 135
+  Num of sites per row: 675
+  Num of sites in total: 91,125
+  Num of std cells reported in file: 10,118
+  Num of sites occupied by those std cells: 76,652
+  Utilization imposed by those std cells: 0.841174
+ Marking sites occupied by standard cells.
+ Finish marking occupancy.
+ Searching for islands
+ Finish search.
+  Found 3,076 islands 
+ Determining exploitable regions.
+  Computing islands' adjacency lists.
+  Finish computing islands' adjacency lists.
+  Building up island connectivity.
+  Finish building up island connectivity.
+ Finish determining exploitable regions.
+
+ Final report:
+  Num of exploitable regions: 28
+  Sum of sites across all regions: 8,761
+  Max of sites across all regions: 1,361
+  Avg of sites across all regions: 312.893
+  Median of sites across all regions: 46
+@file 51: close $pipe
+#@ End verbose source scripts/exploitable_regions.tcl
+@file 70:
+@file 71: # routing track utilization
+@file 72: # NOTE M1 is skipped (even when explicitly setting "-layer 1:10") because M1 is not made available for routing in lib files
+@file 73: report_route -include_regular_routes -track_utilization > reports/track_utilization.rpt
+@file 74:
+@file 75: ####
+@file 76: # mark done; exit
+@file 77: ####
+@file 78:
+@file 79: date > DONE.inv_checks
+@file 80: exit
+
+*** Memory Usage v#1 (Current mem = 1511.156M, initial mem = 396.367M) ***
+*** Message Summary: 264 warning(s), 21 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:50.4, real=0:00:30.0, mem=1511.2M) ---

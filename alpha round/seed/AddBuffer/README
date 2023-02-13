@@ -36,11 +36,12 @@ Folder structure:
 - design.def and design.v
 	- Post-route design file
 	- Corresponding netlist file
-	- Underlying RTL sourced by TalTech team
+	- Underlying RTL sourced by TalTech team; available upon request
 
-- design.sdc and latency.sdc
-	- SDC files for timing analysis
+- design.sdc
+	- SDC file for timing analysis
 	- As used for timing closure during physical design
+	- Does include additional output delays, to mimick impact of pad cells, system integration, etc. 
 
 - reports/ -- Reports for layout evaluation as obtained for the baseline layouts
 	- checks_summary.rpt: Summary of metrics
@@ -73,8 +74,9 @@ Scripts usage:
 - IMPORTANT: Files are organized such that you must invoke scripts directly from this main folder
 - IMPORTANT: Before the 1st run of check.tcl, you need to compile the C++ code in the $root/_scripts/_cpp folder (which is invoked via exploitable_regions.tcl, sourced in check.tcl).
 
-- Design evaluation using Innovus: 'innovus -nowin -stylus -files scripts/check.tcl -log check'
-- Design evaluation using Conformal/LEC: 'lec_64 -nogui -xl -dofile scripts/lec.do | tee lec.log'
+- Design checks using Innovus: 'innovus -nowin -stylus -files scripts/checks.tcl -log checks'
+- Design checks using Conformal/LEC: 'lec_64 -nogui -xl -dofile scripts/lec.do | tee lec.log'
+- PPA evaluation using Innovus: 'innovus -nowin -files scripts/PPA.tcl -log PPA'
 
 - NOTE: We understand that metrics reported by design evaluation scripts may differ from numbers reported during running some regular design flow run at your end, even when using
 the same reference flow/commands as in the provided database. We think this is because of a) different tool versions used and b) loading the DEF and re-evaluating the design
@@ -97,6 +99,9 @@ Changelog:
 - v1.5, Dec 30 2022: Added scripts/check_stripes_*_stylus.tcl; related and further updates scripts/ files; added reports/check_stripes.rpt and other example reports/ files; related update README file
 - v2.0, Jan 04 2023: Revised PDN structures; related updates all design files and all report files
 - v2.1, Jan 06 2023: Updated sha256 design files and report files; updates and code cleanups scripts/check_pins.sh
+- v3.0, Feb 10 2023: Fix timing evaluation: drop latency.sdc files -- these are only applicable for the baseline layouts, but not for any revision of the design by participants, and should thus not
+			be considered ; related updates scripts/check.tcl; refactoring scripts/check.tcl into scripts/checks.tcl and scripts/PPA.tcl -- the timing evaluation as previously implemented
+			in scripts/check.tcl is deprecated as it's inaccurate w/o latency.sdc files; related updates scripts/mmmc.tcl; related updates all timing, power, and scores report files 
 
 Website, contact:
 -------------------

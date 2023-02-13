@@ -1,0 +1,702 @@
+[02/13 08:35:22      0s] 
+[02/13 08:35:22      0s] Cadence Innovus(TM) Implementation System.
+[02/13 08:35:22      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/13 08:35:22      0s] 
+[02/13 08:35:22      0s] Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+[02/13 08:35:22      0s] Options:	-nowin -stylus -files scripts/check_seed.tcl -log check 
+[02/13 08:35:22      0s] Date:		Mon Feb 13 08:35:22 2023
+[02/13 08:35:22      0s] Host:		ic51 (x86_64 w/Linux 3.10.0-1160.25.1.el7.x86_64) (16cores*64cpus*Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz 22528KB)
+[02/13 08:35:22      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[02/13 08:35:22      0s] 
+[02/13 08:35:22      0s] License:
+[02/13 08:35:22      0s] 		[08:35:22.321953] Configured Lic search path (20.02-s004): 5280@lstc
+[02/13 08:35:22      0s] 
+[02/13 08:35:22      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[02/13 08:35:22      0s] 		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+[02/13 08:35:30      7s] 
+[02/13 08:35:30      7s] 
+[02/13 08:35:34     12s] Reset Parastics called with the command setExtractRCMode -reset[02/13 08:35:36     13s] **WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+@(#)CDS: Innovus v21.13-s100_1 (64bit) 03/04/2022 14:32 (Linux 3.10.0-693.el7.x86_64)
+[02/13 08:35:37     14s] @(#)CDS: NanoRoute 21.13-s100_1 NR220220-0140/21_13-UB (database version 18.20.572) {superthreading v2.17}
+[02/13 08:35:37     14s] @(#)CDS: AAE 21.13-s034 (64bit) 03/04/2022 (Linux 3.10.0-693.el7.x86_64)
+[02/13 08:35:37     14s] @(#)CDS: CTE 21.13-s042_1 () Mar  4 2022 08:38:36 ( )
+[02/13 08:35:37     14s] @(#)CDS: SYNTECH 21.13-s014_1 () Feb 17 2022 23:50:03 ( )
+[02/13 08:35:37     14s] @(#)CDS: CPE v21.13-s074
+[02/13 08:35:37     14s] @(#)CDS: IQuantus/TQuantus 20.1.2-s656 (64bit) Tue Nov 9 23:11:16 PST 2021 (Linux 2.6.32-431.11.2.el6.x86_64)
+[02/13 08:35:37     14s] @(#)CDS: OA 22.60-p067 Fri Jan 14 12:14:46 2022
+[02/13 08:35:37     14s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[02/13 08:35:37     14s] @(#)CDS: RCDB 11.15.0
+[02/13 08:35:37     14s] @(#)CDS: STYLUS 21.11-s013_1 (12/14/2021 07:38 PST)
+[02/13 08:35:37     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_20784_ic51_g100501528_AYxgi0.
+
+[02/13 08:35:37     14s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_20784_ic51_g100501528_AYxgi0.
+[02/13 08:35:37     14s] 
+[02/13 08:35:37     14s] Change the soft stacksize limit to 0.2%RAM (256 mbytes). Set global soft_stack_size_limit to change the value.
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] **INFO:  MMMC transition support version v31-84 
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] #@ Processing -files option
+[02/13 08:35:38     15s] @innovus 1> source scripts/check_seed.tcl
+[02/13 08:35:38     15s] #@ Begin verbose source (pre): source scripts/check_seed.tcl
+[02/13 08:35:38     15s] @file 1: ####
+[02/13 08:35:38     15s] @file 2: #
+[02/13 08:35:38     15s] @file 3: # Script for ISPD'23 contest. Johann Knechtel, NYUAD, in collaboration with Mohammad Eslami and Samuel Pagliarini, TalTech
+[02/13 08:35:38     15s] @file 4: #
+[02/13 08:35:38     15s] @file 5: ####
+[02/13 08:35:38     15s] @file 6:
+[02/13 08:35:38     15s] @file 7: ####
+[02/13 08:35:38     15s] @file 8: # general settings
+[02/13 08:35:38     15s] @file 9: ####
+[02/13 08:35:38     15s] @file 10:
+[02/13 08:35:38     15s] @file 11: set_multi_cpu_usage -local_cpu 24
+[02/13 08:35:38     15s] @file 12:
+[02/13 08:35:38     15s] @file 13: set_db design_process_node 7
+[02/13 08:35:38     15s] ##  Process: 7             (User Set)               
+[02/13 08:35:38     15s] ##     Node: (not set)                           
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] ##  Check design process and node:  
+[02/13 08:35:38     15s] ##  Design tech node is not set.
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] Applying the recommended capacitance filtering threshold values for 7nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[02/13 08:35:38     15s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[02/13 08:35:38     15s] 	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+[02/13 08:35:38     15s] 	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+[02/13 08:35:38     15s] 	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+[02/13 08:35:38     15s] @file 14: set_db design_tech_node N7
+[02/13 08:35:38     15s] ##  Process: 7             (User Set)               
+[02/13 08:35:38     15s] ##     Node: N7            (User Set)           
+[02/13 08:35:38     15s] @file 15:
+[02/13 08:35:38     15s] @file 16: set lef_path "ASAP7/asap7_tech_4x_201209.lef ASAP7/asap7sc7p5t_28_L_4x_220121a.lef ASAP7/asap7sc7p5t_28_SL_4x_220121a.lef"
+[02/13 08:35:38     15s] @file 17: set def_path seed_addBuffer.def
+[02/13 08:35:38     15s] @file 18: set netlist_path seed_addBuffer.v
+[02/13 08:35:38     15s] @file 19:
+[02/13 08:35:38     15s] @file 20: ####
+[02/13 08:35:38     15s] @file 21: # init
+[02/13 08:35:38     15s] @file 22: ####
+[02/13 08:35:38     15s] @file 23:
+[02/13 08:35:38     15s] @file 24: read_physical -lefs $lef_path
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] Loading LEF file ASAP7/asap7_tech_4x_201209.lef ...
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] Loading LEF file ASAP7/asap7sc7p5t_28_L_4x_220121a.lef ...
+[02/13 08:35:38     15s] Set DBUPerIGU to M1 pitch 576.
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] Loading LEF file ASAP7/asap7sc7p5t_28_SL_4x_220121a.lef ...
+[02/13 08:35:38     15s] 
+[02/13 08:35:38     15s] viaInitial starts at Mon Feb 13 08:35:38 2023
+[02/13 08:35:38     15s] viaInitial ends at Mon Feb 13 08:35:38 2023
+[02/13 08:35:38     15s] @file 25: read_netlist $netlist_path
+[02/13 08:35:39     15s] #% Begin Load netlist data ... (date=02/13 08:35:39, mem=661.6M)
+[02/13 08:35:39     15s] *** Begin netlist parsing (mem=833.2M) ***
+[02/13 08:35:39     15s] Created 0 new cells from 0 timing libraries.
+[02/13 08:35:39     15s] Reading netlist ...
+[02/13 08:35:39     15s] Backslashed names will retain backslash and a trailing blank character.
+[02/13 08:35:39     15s] Reading verilog netlist 'seed_addBuffer.v'
+[02/13 08:35:39     16s] 
+[02/13 08:35:39     16s] *** Memory Usage v#1 (Current mem = 842.188M, initial mem = 395.367M) ***
+[02/13 08:35:39     16s] *** End netlist parsing (cpu=0:00:00.1, real=0:00:00.0, mem=842.2M) ***
+[02/13 08:35:39     16s] #% End Load netlist data ... (date=02/13 08:35:39, total cpu=0:00:00.1, real=0:00:00.0, peak res=670.8M, current mem=670.7M)
+[02/13 08:35:39     16s] Top level cell is SEED.
+[02/13 08:35:39     16s] Hooked 0 DB cells to tlib cells.
+[02/13 08:35:39     16s] Ending "BindLib:" (total cpu=0:00:00.0, real=0:00:00.0, peak res=671.0M, current mem=671.0M)
+[02/13 08:35:39     16s] Starting recursive module instantiation check.
+[02/13 08:35:39     16s] No recursion found.
+[02/13 08:35:39     16s] Building hierarchical netlist for Cell SEED ...
+[02/13 08:35:39     16s] *** Netlist is unique.
+[02/13 08:35:39     16s] Setting Std. cell height to 4320 DBU (smallest netlist inst).
+[02/13 08:35:39     16s] Set DBUPerIGU to techSite asap7sc7p5t width 864.
+[02/13 08:35:39     16s] ** info: there are 426 modules.
+[02/13 08:35:39     16s] ** info: there are 17390 stdCell insts.
+[02/13 08:35:39     16s] 
+[02/13 08:35:39     16s] *** Memory Usage v#1 (Current mem = 901.617M, initial mem = 395.367M) ***
+[02/13 08:35:39     16s] @file 26: # preserve shapes/layout as is
+[02/13 08:35:39     16s] @file 27: read_def $def_path -preserve_shape
+[02/13 08:35:39     16s] Reading DEF file 'seed_addBuffer.def', current time is Mon Feb 13 08:35:39 2023 ...
+[02/13 08:35:39     16s] **WARN: (IMPDF-66):	Floor plan has not been initialized. Please use 'loadConfig' or 'loadDesign' to load design.
+[02/13 08:35:39     16s] --- DIVIDERCHAR '/'
+[02/13 08:35:39     16s] --- UnitsPerDBU = 1.0000
+[02/13 08:35:39     16s] Start create_tracks
+[02/13 08:35:39     16s] --- DIEAREA (0 0) (827360 827360)
+[02/13 08:35:39     16s] defIn read 10000 lines...
+[02/13 08:35:39     16s] defIn read 20000 lines...
+[02/13 08:35:39     16s] defIn read 30000 lines...
+[02/13 08:35:39     16s] defIn read 40000 lines...
+[02/13 08:35:39     16s] Extracting standard cell pins and blockage ...... 
+[02/13 08:35:39     16s] **WARN: (IMPTR-2108):	For layer M10, the gaps of 15 out of 15 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+[02/13 08:35:39     16s] Type 'man IMPTR-2108' for more detail.
+[02/13 08:35:39     16s]  As a result, your trialRoute congestion could be incorrect.
+[02/13 08:35:39     16s] Pin and blockage extraction finished
+[02/13 08:35:39     16s] Extracting macro/IO cell pins and blockage ...... 
+[02/13 08:35:39     16s] Pin and blockage extraction finished
+[02/13 08:35:39     16s] defIn read 50000 lines...
+[02/13 08:35:39     16s] defIn read 60000 lines...
+[02/13 08:35:39     16s] defIn read 70000 lines...
+[02/13 08:35:39     16s] defIn read 80000 lines...
+[02/13 08:35:39     16s] defIn read 90000 lines...
+[02/13 08:35:39     16s] defIn read 100000 lines...
+[02/13 08:35:39     16s] defIn read 110000 lines...
+[02/13 08:35:39     16s] defIn read 120000 lines...
+[02/13 08:35:39     16s] defIn read 130000 lines...
+[02/13 08:35:39     16s] defIn read 140000 lines...
+[02/13 08:35:39     16s] defIn read 150000 lines...
+[02/13 08:35:39     16s] defIn read 160000 lines...
+[02/13 08:35:39     16s] defIn read 170000 lines...
+[02/13 08:35:39     16s] defIn read 180000 lines...
+[02/13 08:35:39     16s] defIn read 190000 lines...
+[02/13 08:35:39     16s] defIn read 200000 lines...
+[02/13 08:35:39     16s] defIn read 210000 lines...
+[02/13 08:35:39     16s] defIn read 220000 lines...
+[02/13 08:35:39     16s] defIn read 230000 lines...
+[02/13 08:35:39     16s] defIn read 240000 lines...
+[02/13 08:35:39     16s] defIn read 250000 lines...
+[02/13 08:35:40     16s] defIn read 260000 lines...
+[02/13 08:35:40     17s] defIn read 270000 lines...
+[02/13 08:35:40     17s] defIn read 280000 lines...
+[02/13 08:35:40     17s] defIn read 290000 lines...
+[02/13 08:35:40     17s] defIn read 300000 lines...
+[02/13 08:35:40     17s] defIn read 310000 lines...
+[02/13 08:35:40     17s] DEF file 'seed_addBuffer.def' is parsed, current time is Mon Feb 13 08:35:40 2023.
+[02/13 08:35:40     17s] **WARN: (IMPTR-2108):	For layer M10, the gaps of 15 out of 15 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+[02/13 08:35:40     17s] Type 'man IMPTR-2108' for more detail.
+[02/13 08:35:40     17s]  As a result, your trialRoute congestion could be incorrect.
+[02/13 08:35:40     17s] Updating the floorplan ...
+[02/13 08:35:40     17s] @file 28:
+[02/13 08:35:40     17s] @file 29: init_design
+[02/13 08:35:40     17s] Extraction setup Started 
+[02/13 08:35:40     17s] 
+[02/13 08:35:40     17s] Trim Metal Layers:
+[02/13 08:35:40     17s] @file 30:
+[02/13 08:35:40     17s] @file 31: # delete all kinds of fillers (decaps, tap cells, filler cells)
+[02/13 08:35:40     17s] @file 32: delete_filler -cells [ get_db -u [ get_db insts -if { .is_physical } ] .base_cell.name ]
+[02/13 08:35:40     17s] OPERPROF: Starting PlacementDelFiller
+ at level 1, MEM:926.1M, EPOCH TIME: 1676248540.242685
+[02/13 08:35:40     17s] Deleted 2880 physical insts (cell TAPCELL_ASAP7_75t_L / prefix -).
+[02/13 08:35:40     17s] OPERPROF: Finished PlacementDelFiller
+ at level 1, CPU:0.010, REAL:0.005, MEM:926.1M, EPOCH TIME: 1676248540.247853
+[02/13 08:35:40     17s] @file 33:
+[02/13 08:35:40     17s] @file 34: ####
+[02/13 08:35:40     17s] @file 35: # design checks
+[02/13 08:35:40     17s] @file 36: ####
+[02/13 08:35:40     17s] @file 37:
+[02/13 08:35:40     17s] @file 38: # covers routing issues like dangling wires, floating metals, open pins, etc.; check *.conn.rpt
+[02/13 08:35:40     17s] @file 39: # NOTE false positives for dangling VDD, VSS at M1
+[02/13 08:35:40     17s] @file 40: check_connectivity -error 100000 -warning 100000 -check_wire_loops
+[02/13 08:35:40     17s] VERIFY_CONNECTIVITY use new engine.
+[02/13 08:35:40     17s] 
+[02/13 08:35:40     17s] ******** Start: VERIFY CONNECTIVITY ********
+[02/13 08:35:40     17s] Start Time: Mon Feb 13 08:35:40 2023
+[02/13 08:35:40     17s] 
+[02/13 08:35:40     17s] Design Name: SEED
+[02/13 08:35:40     17s] Database Units: 4000
+[02/13 08:35:40     17s] Design Boundary: (0.0000, 0.0000) (206.8400, 206.8400)
+[02/13 08:35:40     17s] Error Limit = 100000; Warning Limit = 100000
+[02/13 08:35:40     17s] Check all nets
+[02/13 08:35:40     17s] Use 24 pthreads
+[02/13 08:35:40     18s] Net VSS: dangling Wire.
+[02/13 08:35:40     18s] Net VDD: dangling Wire.
+[02/13 08:35:40     18s] 
+[02/13 08:35:40     18s] Begin Summary 
+[02/13 08:35:40     18s]     686 Problem(s) (IMPVFC-94): The net has dangling wire(s).
+[02/13 08:35:40     18s]     686 total info(s) created.
+[02/13 08:35:40     18s] End Summary
+[02/13 08:35:40     18s] 
+[02/13 08:35:40     18s] End Time: Mon Feb 13 08:35:40 2023
+[02/13 08:35:40     18s] Time Elapsed: 0:00:00.0
+[02/13 08:35:40     18s] 
+[02/13 08:35:40     18s] ******** End: VERIFY CONNECTIVITY ********
+[02/13 08:35:40     18s]   Verification Complete : 686 Viols.  0 Wrngs.
+[02/13 08:35:40     18s]   (CPU Time: 0:00:01.5  MEM: 30.000M)
+[02/13 08:35:40     18s] 
+[02/13 08:35:40     18s] @file 41: mv *.conn.rpt reports/
+[02/13 08:35:40     18s] @file 42:
+[02/13 08:35:40     18s] @file 43: # covers IO pins; check *.checkPin.rpt
+[02/13 08:35:40     18s] @file 44: check_pin_assignment
+[02/13 08:35:40     18s] #% Begin check_pin_assignment (date=02/13 08:35:40, mem=753.0M)
+[02/13 08:35:40     18s] #create default rule from bind_ndr_rule rule=0x7f6f767dea00 0x7f6f7a9b8018
+[02/13 08:35:40     18s] #WARNING (NRDB-411) spacing table for LAYER M5 is already defined. Ignore this one.
+[02/13 08:35:40     18s] #WARNING (NRDB-411) spacing table for LAYER M6 is already defined. Ignore this one.
+[02/13 08:35:40     18s] #WARNING (NRDB-411) spacing table for LAYER M7 is already defined. Ignore this one.
+[02/13 08:35:40     18s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[02/13 08:35:40     18s] #WARNING (NRFL-369) Ignoring MINIMUMCUT rules with number of cuts less than 2.
+[02/13 08:35:40     18s] #WARNING (NRDB-2106) Ignoring layer Pad MINIMUMCUT rule with WIDTH (7.220000) <= the layer's MINWIDTH (8.000000). 
+[02/13 08:35:40     18s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1
+[02/13 08:35:40     18s] Checking pins of top cell SEED ... completed
+[02/13 08:35:40     19s] 
+[02/13 08:35:40     19s] ===========================================================================================================================
+[02/13 08:35:40     19s]                                                 checkPinAssignment Summary
+[02/13 08:35:40     19s] ===========================================================================================================================
+[02/13 08:35:40     19s] Partition   | pads  | pins   | legal  | illegal | internal | internal illegal | FT     | FT illegal | constant | unplaced |
+[02/13 08:35:40     19s] ===========================================================================================================================
+[02/13 08:35:40     19s] SEED        |     0 |    521 |    521 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+[02/13 08:35:40     19s] ===========================================================================================================================
+[02/13 08:35:40     19s] TOTAL       |     0 |    521 |    521 |       0 |        0 |                0 |      0 |          0 |        0 |        0 |
+[02/13 08:35:40     19s] ===========================================================================================================================
+[02/13 08:35:40     19s] #% End check_pin_assignment (date=02/13 08:35:40, total cpu=0:00:00.2, real=0:00:00.0, peak res=774.4M, current mem=773.1M)
+[02/13 08:35:40     19s] @file 45: mv *.checkPin.rpt reports/
+[02/13 08:35:40     19s] @file 46:
+[02/13 08:35:40     19s] @file 47: # covers routing DRCs; check *.geom.rpt
+[02/13 08:35:40     19s] @file 48: check_drc -limit 100000
+[02/13 08:35:40     19s] #-limit 100000                           # int, default=100000, user setting
+[02/13 08:35:40     19s] #-check_same_via_cell true               # bool, default=false, user setting
+[02/13 08:35:40     19s]  *** Starting Verify DRC (MEM: 1126.1) ***
+[02/13 08:35:40     19s] 
+[02/13 08:35:40     19s]   VERIFY DRC ...... Starting Verification
+[02/13 08:35:40     19s]   VERIFY DRC ...... Initializing
+[02/13 08:35:40     19s]   VERIFY DRC ...... Deleting Existing Violations
+[02/13 08:35:40     19s]   VERIFY DRC ...... Creating Sub-Areas
+[02/13 08:35:40     19s] **WARN: (IMPVFG-1198):	The number of CPUs requested 24 is larger than that check_drc used 16. In Multithreading mode, the number of CPUs check_drc used is not larger than the number of subareas.
+[02/13 08:35:40     19s]  Use 'set_multi_cpu_usage -local_cpu' to specify the less cup number if the verify area is not large.
+[02/13 08:35:40     19s]   VERIFY DRC ...... Using new threading
+[02/13 08:35:44     33s]  VERIFY DRC ...... Sub-Area: {103.680 0.000 155.520 51.840} 3 of 16  Thread : 0
+[02/13 08:35:44     33s]  VERIFY DRC ...... Sub-Area: {0.000 0.000 51.840 51.840} 1 of 16  Thread : 7
+[02/13 08:35:44     34s]  VERIFY DRC ...... Sub-Area: {103.680 103.680 155.520 155.520} 11 of 16  Thread : 4
+[02/13 08:35:44     34s]  VERIFY DRC ...... Sub-Area: {0.000 103.680 51.840 155.520} 9 of 16  Thread : 8
+[02/13 08:35:47     46s]  VERIFY DRC ...... Sub-Area: {51.840 0.000 103.680 51.840} 2 of 16  Thread : 7
+[02/13 08:35:47     47s]  VERIFY DRC ...... Sub-Area: {155.520 0.000 206.840 51.840} 4 of 16  Thread : 0
+[02/13 08:35:48     48s]  VERIFY DRC ...... Sub-Area: {155.520 103.680 206.840 155.520} 12 of 16  Thread : 4
+[02/13 08:35:48     49s]  VERIFY DRC ...... Sub-Area: {51.840 103.680 103.680 155.520} 10 of 16  Thread : 8
+[02/13 08:35:51     62s]  VERIFY DRC ...... Sub-Area: {155.520 51.840 206.840 103.680} 8 of 16  Thread : 4
+[02/13 08:35:51     62s]  VERIFY DRC ...... Sub-Area: {155.520 155.520 206.840 206.840} 16 of 16  Thread : 0
+[02/13 08:35:52     63s]  VERIFY DRC ...... Sub-Area: {0.000 155.520 51.840 206.840} 13 of 16  Thread : 7
+[02/13 08:35:52     64s]  VERIFY DRC ...... Sub-Area: {0.000 51.840 51.840 103.680} 5 of 16  Thread : 8
+[02/13 08:35:55     70s]  VERIFY DRC ...... Sub-Area: {103.680 51.840 155.520 103.680} 7 of 16  Thread : 4
+[02/13 08:35:55     70s]  VERIFY DRC ...... Sub-Area: {103.680 155.520 155.520 206.840} 15 of 16  Thread : 0
+[02/13 08:35:55     70s]  VERIFY DRC ...... Thread : 7 finished.
+[02/13 08:35:58     77s]  VERIFY DRC ...... Sub-Area: {51.840 155.520 103.680 206.840} 14 of 16  Thread : 0
+[02/13 08:35:58     77s]  VERIFY DRC ...... Thread : 0 finished.
+[02/13 08:35:58     77s]  VERIFY DRC ...... Sub-Area: {51.840 51.840 103.680 103.680} 6 of 16  Thread : 4
+[02/13 08:35:58     77s]  VERIFY DRC ...... Thread : 4 finished.
+[02/13 08:35:59     77s] 
+[02/13 08:35:59     77s]   Verification Complete : 0 Viols.
+[02/13 08:35:59     77s] 
+[02/13 08:35:59     77s]  *** End Verify DRC (CPU: 0:00:58.5  ELAPSED TIME: 19.00  MEM: 1456.0M) ***
+[02/13 08:35:59     77s] 
+[02/13 08:35:59     77s] @file 49: mv *.geom.rpt reports/
+[02/13 08:35:59     77s] @file 50:
+[02/13 08:35:59     77s] @file 51: # covers placement and routing issues
+[02/13 08:35:59     77s] @file 52: # NOTE false positives for VDD, VSS vias at M4, M5, M6; report file has incomplete info, full details are in check.logv
+[02/13 08:35:59     77s] @file 53: check_design -type {place route} > reports/check_design.rpt
+[02/13 08:36:00     80s] Ending "check_follow_pin_not_overlap_with_hard_macro" (total cpu=0:00:00.0, real=0:00:00.0, peak res=2225.3M, current mem=816.9M)
+[02/13 08:36:00     80s] Ending "check_macro_pin_on_track" (total cpu=0:00:00.0, real=0:00:00.0, peak res=816.9M, current mem=816.9M)
+[02/13 08:36:00     80s] Checking constraints (fence).....
+[02/13 08:36:00     80s] Ending "check_macro_status" (total cpu=0:00:00.0, real=0:00:00.0, peak res=817.0M, current mem=817.0M)
+[02/13 08:36:00     80s] Ending "check_io_pad_status" (total cpu=0:00:00.0, real=0:00:00.0, peak res=817.0M, current mem=817.0M)
+[02/13 08:36:00     80s] Ending "check_constraint_blockage_status" (total cpu=0:00:00.0, real=0:00:00.0, peak res=817.0M, current mem=817.0M)
+[02/13 08:36:00     80s] Checking constraints (fence).....
+[02/13 08:36:00     80s] Ending "check_fence_status" (total cpu=0:00:00.0, real=0:00:00.0, peak res=817.0M, current mem=817.0M)
+[02/13 08:36:00     80s] Ending "check_component_status" (total cpu=0:00:00.0, real=0:00:00.0, peak res=817.0M, current mem=817.0M)
+[02/13 08:36:00     80s] Total CPU(s) requested: 24
+[02/13 08:36:00     80s] Total CPU(s) enabled with current License(s): 8
+[02/13 08:36:00     80s] Current free CPU(s): 8
+[02/13 08:36:00     80s] Additional license(s) checked out: 2 Innovus_CPU_Opt license(s) for 16 CPU(s)
+[02/13 08:36:00     80s] [08:35:59.166336] Periodic Lic check successful
+[02/13 08:36:00     80s] [08:35:59.166353] Feature usage summary:
+[02/13 08:36:00     80s] [08:35:59.166353] Innovus_Impl_System
+[02/13 08:36:00     80s] [08:35:59.166354] Innovus_CPU_Opt
+[02/13 08:36:00     80s] 
+[02/13 08:36:00     80s] Total CPU(s) now enabled: 24
+[02/13 08:36:00     80s] Multithreaded Timing Analysis is initialized with 24 threads
+[02/13 08:36:00     80s] 
+[02/13 08:36:00     80s] Estimated cell power/ground rail width = 0.101 um
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell BUFx4f_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB1xp67_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB2xp67_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB4xp67_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell BUFx6f_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell BUFx2_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB3xp67_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB1xp67_ASAP7_75t_L's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB2xp67_ASAP7_75t_L's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB3xp67_ASAP7_75t_L's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell HB4xp67_ASAP7_75t_L's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell BUFx3_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell NAND3xp33_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell INVxp67_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell AOI22xp5_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell OAI321xp33_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell NAND2xp5_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell NAND3x1_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell AOI21xp5_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (IMPSP-377):	Center of Cell OAI311xp33_ASAP7_75t_SL's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+[02/13 08:36:00     80s] Type 'man IMPSP-377' for more detail.
+[02/13 08:36:00     80s] **WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+[02/13 08:36:00     80s] To increase the message display limit, refer to the product command reference manual.
+[02/13 08:36:00     80s] Ending "check_fixed_inst_alignment" (total cpu=0:00:00.0, real=0:00:00.0, peak res=934.4M, current mem=934.4M)
+[02/13 08:36:00     80s] Average module density = 0.769.
+[02/13 08:36:00     80s] Density for the design = 0.769.
+[02/13 08:36:00     80s]        = stdcell_area 124616 sites (29070 um^2) / alloc_area 162000 sites (37791 um^2).
+[02/13 08:36:00     80s] Pin Density = 0.3677.
+[02/13 08:36:00     80s]             = total # of pins 59562 / total area 162000.
+[02/13 08:36:00     80s] Ending "check_module_density" (total cpu=0:00:00.1, real=0:00:01.0, peak res=934.4M, current mem=918.9M)
+[02/13 08:36:00     80s] Updating RC grid for preRoute extraction ...
+[02/13 08:36:00     80s] **WARN: (IMPSP-1760):	Buffer footprint does not have non-inverting buffers.  Using inverter footprint for Virtual IPO. Verify you have buffers defined in the libraries you have read in and confirm they are usable by running report_dont_use_cells. Run 'set_opt_dont_use bufferName false' to enable buffers which are currently unusable.  
+[02/13 08:36:00     80s] Type 'man IMPSP-1760' for more detail.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M5 does not align with the tracks at 2.188000 51.544000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M5 does not align with the tracks at 2.188000 51.544000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M5 does not align with the tracks at 4.748000 6.808000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M5 does not align with the tracks at 4.748000 6.808000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M6 does not align with the tracks at 7.084000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M6 does not align with the tracks at 7.084000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M4 does not align with the tracks at 7.084000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M4 does not align with the tracks at 7.084000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M4 does not align with the tracks at 8.380000 2.188000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M4 does not align with the tracks at 8.380000 2.188000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M5 does not align with the tracks at 2.188000 8.536000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M5 does not align with the tracks at 2.188000 8.536000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M4 does not align with the tracks at 21.340000 2.188000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VSS in DPT layer M4 does not align with the tracks at 21.340000 2.188000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M6 does not align with the tracks at 20.044000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M4 does not align with the tracks at 20.044000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M4 does not align with the tracks at 20.044000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M6 does not align with the tracks at 20.044000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M6 does not align with the tracks at 33.004000 4.748000.
+[02/13 08:36:00     80s] **ERROR: (IMPPP-4418):	The via for net VDD in DPT layer M4 does not align with the tracks at 33.004000 4.748000.
+[02/13 08:36:00     80s] **WARN: (EMS-27):	Message (IMPPP-4418) has exceeded the current message display limit of 20.
+[02/13 08:36:00     80s] To increase the message display limit, refer to the product command reference manual.
+[02/13 08:36:01     88s] #Checking placement violation...
+[02/13 08:36:01     88s] Begin checking placement ... (start mem=1385.4M, init mem=1401.4M)
+[02/13 08:36:01     88s] Vertical Pin-Track Alignment Violation:	25
+[02/13 08:36:01     88s] *info: Placed = 17390         
+[02/13 08:36:01     88s] *info: Unplaced = 0           
+[02/13 08:36:01     88s] Placement Density:76.92%(29070/37791)
+[02/13 08:36:01     88s] Placement Density (including fixed std cells):76.92%(29070/37791)
+[02/13 08:36:01     88s] Finished check_place (total: cpu=0:00:02.8, real=0:00:00.0; vio checks: cpu=0:00:02.5, real=0:00:00.0; mem=1385.4M)
+[02/13 08:36:01     88s] #cpu time = 00:00:03, elapsed time = 00:00:00, memory = 926.04 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking wire integrity...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 926.06 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking unplaced instance...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking track...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking blocked track...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking 3rd-party violation...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking ECO route violation...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking unplaced I/O pin...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking same-cell violation...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] #Checking pin layer escape...
+[02/13 08:36:01     88s] #cpu time = 00:00:00, elapsed time = 00:00:00, memory = 894.32 (MB), peak = 2226.52 (MB)
+[02/13 08:36:01     88s] @file 54:
+[02/13 08:36:01     88s] @file 55: # custom checks for PDN stripes
+[02/13 08:36:01     88s] @file 56: set out [open reports/check_stripes.rpt w]
+[02/13 08:36:01     88s] @file 57: puts $out "PDN stripes checks"
+[02/13 08:36:01     88s] @file 58: puts $out "=================="
+[02/13 08:36:01     88s] @file 59: close $out
+[02/13 08:36:01     88s] @file 60: source scripts/check_stripes_area_stylus.tcl
+[02/13 08:36:01     88s] #@ Begin verbose source scripts/check_stripes_area_stylus.tcl (pre)
+[02/13 08:36:01     88s] @file 1: ##########################################
+[02/13 08:36:01     88s] @file 2: #
+[02/13 08:36:01     88s] @file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+[02/13 08:36:01     88s] @file 4: #
+[02/13 08:36:01     88s] @file 5: # Script for checking the power stripes based on box area
+[02/13 08:36:01     88s] @file 6: # to be used in stylus version
+[02/13 08:36:01     88s] @file 7: # Date: 2022.12.29
+[02/13 08:36:01     88s] @file 8: # ISPD'23 Contest
+[02/13 08:36:01     88s] @file 9: #
+[02/13 08:36:01     88s] @file 10: ##########################################
+[02/13 08:36:01     88s] @file 11:
+[02/13 08:36:01     88s] @file 12: set out [open reports/check_stripes.rpt a]
+[02/13 08:36:01     88s] @file 13: puts $out "Check by area"
+[02/13 08:36:01     88s] @file 14: puts $out "-------------"
+[02/13 08:36:01     88s] @file 15:
+[02/13 08:36:01     88s] @file 16: # power net names
+[02/13 08:36:01     88s] @file 17: set p_names {VDD VSS}
+[02/13 08:36:01     88s] @file 18:
+[02/13 08:36:01     88s] @file 19: set c_flag "valid"
+[02/13 08:36:01     88s] @file 20:
+[02/13 08:36:01     88s] @file 21: # the loop strats from M2 layer and continue checking until M9
+[02/13 08:36:01     88s] @file 22: for {set j 2} {$j < 10} {incr j} {
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]   set stripe_area  ""
+[02/13 08:36:01     88s]   set refrence ""
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]  for {set k 0} {$k < 2} {incr k} {
+[02/13 08:36:01     88s] select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+[02/13 08:36:01     88s]  
+[02/13 08:36:01     88s]  set stripe_area [get_db selected .area]
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]  for {set i 0} {$i < [expr [llength $stripe_area] - 1]} {incr i} {
+[02/13 08:36:01     88s]     if {$i == 0} {
+[02/13 08:36:01     88s]      set refrence [lindex $stripe_area $i]
+[02/13 08:36:01     88s]     }
+[02/13 08:36:01     88s]     if {($refrence) == [lindex $stripe_area [ expr $i + 1]]} {
+[02/13 08:36:01     88s]      set compare "valid"
+[02/13 08:36:01     88s]     } else {
+[02/13 08:36:01     88s]       set compare "false"
+[02/13 08:36:01     88s] 	  set c_flag "false"
+[02/13 08:36:01     88s]       }
+[02/13 08:36:01     88s]  }
+[02/13 08:36:01     88s]   deselect_obj -all
+[02/13 08:36:01     88s] # detailed report 
+[02/13 08:36:01     88s]   puts $out "M$j ---- [lindex $p_names $k]  ---> $compare"
+[02/13 08:36:01     88s]  }
+[02/13 08:36:01     88s] }
+[02/13 08:36:01     88s] @file 48:
+[02/13 08:36:01     88s] @file 49: puts $out "Final result: $c_flag" 
+[02/13 08:36:01     88s] @file 50: puts $out ""
+[02/13 08:36:01     88s] @file 51:
+[02/13 08:36:01     88s] @file 52: close $out
+[02/13 08:36:01     88s] #@ End verbose source scripts/check_stripes_area_stylus.tcl
+[02/13 08:36:01     88s] @file 61: source scripts/check_stripes_coors_stylus.tcl
+[02/13 08:36:01     88s] #@ Begin verbose source scripts/check_stripes_coors_stylus.tcl (pre)
+[02/13 08:36:01     88s] @file 1: ##########################################
+[02/13 08:36:01     88s] @file 2: #
+[02/13 08:36:01     88s] @file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+[02/13 08:36:01     88s] @file 4: #
+[02/13 08:36:01     88s] @file 5: # Script for checking the power stripes based on coordinates
+[02/13 08:36:01     88s] @file 6: # to be used in stylus version
+[02/13 08:36:01     88s] @file 7: # Date: 2022.12.28
+[02/13 08:36:01     88s] @file 8: # ISPD'23 Contest
+[02/13 08:36:01     88s] @file 9: #
+[02/13 08:36:01     88s] @file 10: ##########################################
+[02/13 08:36:01     88s] @file 11:
+[02/13 08:36:01     88s] @file 12: set out [open reports/check_stripes.rpt a]
+[02/13 08:36:01     88s] @file 13: puts $out "Check by coordinates"
+[02/13 08:36:01     88s] @file 14: puts $out "--------------------"
+[02/13 08:36:01     88s] @file 15:
+[02/13 08:36:01     88s] @file 16: # power net names
+[02/13 08:36:01     88s] @file 17: set p_names {VDD VSS}
+[02/13 08:36:01     88s] @file 18:
+[02/13 08:36:01     88s] @file 19: set c_flag "valid"
+[02/13 08:36:01     88s] @file 20:
+[02/13 08:36:01     88s] @file 21: # the loop strats from M2 layer and continue checking until M9
+[02/13 08:36:01     88s] @file 22: for {set j 2} {$j < 10} {incr j} {
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]  set coors  ""
+[02/13 08:36:01     88s]  set sub_result ""
+[02/13 08:36:01     88s]  set refrence ""
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] # a loop for selecting VDD and VSS for each metal layer 
+[02/13 08:36:01     88s]  for {set k 0} {$k < 2} {incr k} {
+[02/13 08:36:01     88s] select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+[02/13 08:36:01     88s] # the stripes on the even layers are horizontal while the rest are vertical
+[02/13 08:36:01     88s]  if {[expr $j / 2] == 0} {
+[02/13 08:36:01     88s] # if the stripe is horizontal, we capture the lly coordinates of the stripes
+[02/13 08:36:01     88s]   set coors [get_db selected .rect.ll.y]
+[02/13 08:36:01     88s]   } else {
+[02/13 08:36:01     88s] # if the stripe is vertical, we capture the llx coordinates of the stripes
+[02/13 08:36:01     88s]    set coors [get_db selected .rect.ll.x]
+[02/13 08:36:01     88s]    }
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]  set coors [lsort -dictionary $coors]
+[02/13 08:36:01     88s]  for {set i 0} {$i < [expr [llength $coors] - 1]} {incr i} {
+[02/13 08:36:01     88s]   set sub_result [expr [lindex $coors [ expr $i + 1]] - [lindex $coors $i] ]
+[02/13 08:36:01     88s]      if {$i == 0} {
+[02/13 08:36:01     88s]       set refrence [expr int($sub_result)]
+[02/13 08:36:01     88s]      }
+[02/13 08:36:01     88s] # here we compare the integer part for each coordinate pair to measure the distance
+[02/13 08:36:01     88s]      if {[expr int($sub_result)] == $refrence} {
+[02/13 08:36:01     88s]       set compare "valid"
+[02/13 08:36:01     88s]      } else {
+[02/13 08:36:01     88s]        set compare "false"
+[02/13 08:36:01     88s]        set c_flag "false"
+[02/13 08:36:01     88s] 	   puts " [expr int($sub_result)] != $refrence"
+[02/13 08:36:01     88s]    	  }
+[02/13 08:36:01     88s]  }
+[02/13 08:36:01     88s]  deselect_obj -all
+[02/13 08:36:01     88s] # detailed report 
+[02/13 08:36:01     88s]  puts $out "M$j ---- [lindex $p_names $k]  ---> $compare ---- $c_flag"
+[02/13 08:36:01     88s]  }
+[02/13 08:36:01     88s] }
+[02/13 08:36:01     88s] @file 60:
+[02/13 08:36:01     88s] @file 61: puts $out "Final result: $c_flag" 
+[02/13 08:36:01     88s] @file 62: puts $out ""
+[02/13 08:36:01     88s] @file 63:
+[02/13 08:36:01     88s] @file 64: close $out
+[02/13 08:36:01     88s] #@ End verbose source scripts/check_stripes_coors_stylus.tcl
+[02/13 08:36:01     88s] @file 62: source scripts/check_stripes_width_stylus.tcl
+[02/13 08:36:01     88s] #@ Begin verbose source scripts/check_stripes_width_stylus.tcl (pre)
+[02/13 08:36:01     88s] @file 1: ##########################################
+[02/13 08:36:01     88s] @file 2: #
+[02/13 08:36:01     88s] @file 3: # Script for ISPD'23 contest. Mohammad Eslami and Samuel Pagliarini, TalTech, in collaboration with Johann Knechtel, NYUAD
+[02/13 08:36:01     88s] @file 4: #
+[02/13 08:36:01     88s] @file 5: # Script for checking the power stripes based on box width
+[02/13 08:36:01     88s] @file 6: # to be used in stylus version
+[02/13 08:36:01     88s] @file 7: # Date: 2022.12.29
+[02/13 08:36:01     88s] @file 8: # ISPD'23 Contest
+[02/13 08:36:01     88s] @file 9: #
+[02/13 08:36:01     88s] @file 10: ##########################################
+[02/13 08:36:01     88s] @file 11:
+[02/13 08:36:01     88s] @file 12: set out [open reports/check_stripes.rpt a]
+[02/13 08:36:01     88s] @file 13: puts $out "Check by box width"
+[02/13 08:36:01     88s] @file 14: puts $out "------------------"
+[02/13 08:36:01     88s] @file 15:
+[02/13 08:36:01     88s] @file 16: # power net names
+[02/13 08:36:01     88s] @file 17: set p_names {VDD VSS}
+[02/13 08:36:01     88s] @file 18:
+[02/13 08:36:01     88s] @file 19: set c_flag "valid"
+[02/13 08:36:01     88s] @file 20:
+[02/13 08:36:01     88s] @file 21: # the loop strats from M2 layer and continue checking until M9
+[02/13 08:36:01     88s] @file 22: for {set j 2} {$j < 10} {incr j} {
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]  set coors  ""
+[02/13 08:36:01     88s]  set sub_result ""
+[02/13 08:36:01     88s]  set refrence ""
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] # a loop for selecting VDD and VSS for each metal layer 
+[02/13 08:36:01     88s]  for {set k 0} {$k < 2} {incr k} {
+[02/13 08:36:01     88s] select_routes -nets [lindex $p_names $k] -shapes stripe -layer M$j
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]   set stripe_wid [get_db selected .rect.width]
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s]   for {set i 0} {$i < [expr [llength $stripe_wid] - 1]} {incr i} {
+[02/13 08:36:01     88s]     if {$i == 0} {
+[02/13 08:36:01     88s]      set refrence [lindex $stripe_wid $i]
+[02/13 08:36:01     88s]     }
+[02/13 08:36:01     88s]     if {($refrence) == [lindex $stripe_wid [ expr $i + 1]]} {
+[02/13 08:36:01     88s]      set compare "valid"
+[02/13 08:36:01     88s]     } else {
+[02/13 08:36:01     88s]       set compare "false"
+[02/13 08:36:01     88s] 	  set c_flag "false"
+[02/13 08:36:01     88s]       }
+[02/13 08:36:01     88s]     }
+[02/13 08:36:01     88s] 	 deselect_obj -all
+[02/13 08:36:01     88s] # detailed report 
+[02/13 08:36:01     88s]   puts $out "M$j ---- [lindex $p_names $k]  ---> $compare"
+[02/13 08:36:01     88s]  } 
+[02/13 08:36:01     88s] }
+[02/13 08:36:01     88s] @file 50:
+[02/13 08:36:01     88s] @file 51: puts $out "Final result: $c_flag" 
+[02/13 08:36:01     88s] @file 52: puts $out ""
+[02/13 08:36:01     88s] @file 53:
+[02/13 08:36:01     88s] @file 54: close $out
+[02/13 08:36:01     88s] #@ End verbose source scripts/check_stripes_width_stylus.tcl
+[02/13 08:36:01     88s] @file 63:
+[02/13 08:36:01     88s] @file 64: ####
+[02/13 08:36:01     88s] @file 65: # security evaluation: 1st order, alpha round
+[02/13 08:36:01     88s] @file 66: ####
+[02/13 08:36:01     88s] @file 67:
+[02/13 08:36:01     88s] @file 68: # exploitable regions
+[02/13 08:36:01     88s] @file 69: source scripts/exploitable_regions.tcl
+[02/13 08:36:01     88s] #@ Begin verbose source scripts/exploitable_regions.tcl (pre)
+[02/13 08:36:01     88s] @file 1: ####
+[02/13 08:36:01     88s] @file 2: #
+[02/13 08:36:01     88s] @file 3: # Script for ISPD'23 contest.
+[02/13 08:36:01     88s] @file 4: #
+[02/13 08:36:01     88s] @file 5: # The baseline code, that is for extraction of cell placement in rows and sites, was provided as courtesy by team
+[02/13 08:36:01     88s] @file 6: # CUEDA (The Chinese University of Hong Kong; Fangzhou Wang, Qijing Wang, Bangqi Fu, Shui Jiang, Xiaopeng Zhang,
+[02/13 08:36:01     88s] @file 7: # Tsung-Yi Ho, Evangeline F.Y. Young) during ISPD'22 contest. Many thanks to them!
+[02/13 08:36:01     88s] @file 8: #
+[02/13 08:36:01     88s] @file 9: # Further edits by Johann Knechtel, NYUAD
+[02/13 08:36:01     88s] @file 10: #
+[02/13 08:36:01     88s] @file 11: ####
+[02/13 08:36:01     88s] @file 12:
+[02/13 08:36:01     88s] @file 13: set out [open "placement.info" w+]
+[02/13 08:36:01     88s] @file 14:
+[02/13 08:36:01     88s] @file 15: # extract design geometries
+[02/13 08:36:01     88s] @file 16: set core_rect [get_db designs .core_bbox]
+[02/13 08:36:01     88s] @file 17: set x_l_core [lindex $core_rect 0 0]
+[02/13 08:36:01     88s] @file 18: set y_l_core [lindex $core_rect 0 1]
+[02/13 08:36:01     88s] @file 19: set x_unit [lindex [get_db sites .size] 0 0]
+[02/13 08:36:01     88s] @file 20: set y_unit [lindex [get_db sites .size] 0 1]
+[02/13 08:36:01     88s] @file 21:
+[02/13 08:36:01     88s] @file 22: puts $out "CORE_BBOX [lindex [get_db designs .core_bbox] 0]"
+[02/13 08:36:01     88s] @file 23: puts $out "NUM_ROWS [llength [get_db rows]]"
+[02/13 08:36:01     88s] @file 24: puts $out "NUM_SITES_PER_ROW [get_db [lindex [get_db rows] 0] .num_x]"
+[02/13 08:36:01     88s] @file 25: puts $out "SITE_WIDTH $x_unit "
+[02/13 08:36:01     88s] @file 26: puts $out "SITE_HEIGHT $y_unit "
+[02/13 08:36:01     88s] @file 27:
+[02/13 08:36:01     88s] @file 28: # extract cell placement; note that physical cells (decaps, fillers, tapcells) are already deleted at this point
+[02/13 08:36:01     88s] @file 29: foreach cell [get_db insts] {
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] 	set cell_rect [lindex [get_db $cell .bbox] 0]
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] 	set x_pos_core [expr [lindex $cell_rect 0] - $x_l_core]
+[02/13 08:36:01     88s] 	set y_pos_core [expr [lindex $cell_rect 1] - $y_l_core]
+[02/13 08:36:01     88s] 	set x_width [expr [lindex $cell_rect 2] - [lindex $cell_rect 0]]
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] 	set x_idx [expr int(($x_pos_core + 0.001) / $x_unit)]
+[02/13 08:36:01     88s] 	set y_idx [expr int(($y_pos_core + 0.001) / $y_unit)]
+[02/13 08:36:01     88s] 	set width [expr int(($x_width + 0.001) / $x_unit)]
+[02/13 08:36:01     88s] 
+[02/13 08:36:01     88s] 	puts $out "[get_db $cell] $x_idx $y_idx $width"
+[02/13 08:36:01     88s] }
+[02/13 08:36:01     88s] @file 43: close $out
+[02/13 08:36:01     88s] @file 44:
+[02/13 08:36:01     88s] @file 45: # external call, log lines printed out as they come in, via a pipe construct
+[02/13 08:36:01     88s] @file 46: # https://stackoverflow.com/a/35398439
+[02/13 08:36:01     88s] @file 47: set pipe [open |[list scripts/exploitable_regions.bin placement.info 20 | tee reports/exploitable_regions.rpt 2>@1]]
+[02/13 08:36:01     88s] @file 48: while {[gets $pipe line] >= 0} {
+[02/13 08:36:01     88s] 	puts "$line"
+[02/13 08:36:01     88s] }
+[02/13 08:36:01     88s] ----------------------------
+[02/13 08:36:01     88s] Evaluate exploitable regions
+[02/13 08:36:01     88s] ----------------------------
+[02/13 08:36:01     88s]  Parameters provided: place_file_name = "placement.info", exploitable_region_size_threshold = "20"
+[02/13 08:36:01     88s]  Parsing placement info file: placement.info
+[02/13 08:36:01     88s]  Finish parsing.
+[02/13 08:36:01     88s]   Num of rows: 180
+[02/13 08:36:01     88s]   Num of sites per row: 900
+[02/13 08:36:01     88s]   Num of sites in total: 162,000
+[02/13 08:36:01     88s]   Num of std cells reported in file: 17,390
+[02/13 08:36:01     88s]   Num of sites occupied by those std cells: 124,616
+[02/13 08:36:01     88s]   Utilization imposed by those std cells: 0.769235
+[02/13 08:36:01     88s]  Marking sites occupied by standard cells.
+[02/13 08:36:01     88s]  Finish marking occupancy.
+[02/13 08:36:01     88s]  Searching for islands
+[02/13 08:36:01     88s]  Finish search.
+[02/13 08:36:01     88s]   Found 7,262 islands 
+[02/13 08:36:01     88s]  Determining exploitable regions.
+[02/13 08:36:01     88s]   Computing islands' adjacency lists.
+[02/13 08:36:02     88s]   Finish computing islands' adjacency lists.
+[02/13 08:36:02     88s]   Building up island connectivity.
+[02/13 08:36:02     88s]   Finish building up island connectivity.
+[02/13 08:36:02     88s]  Finish determining exploitable regions.
+[02/13 08:36:02     88s] 
+[02/13 08:36:02     88s]  Final report:
+[02/13 08:36:02     88s]   Num of exploitable regions: 121
+[02/13 08:36:02     88s]   Sum of sites across all regions: 25,260
+[02/13 08:36:02     88s]   Max of sites across all regions: 3,821
+[02/13 08:36:02     88s]   Avg of sites across all regions: 208.76
+[02/13 08:36:02     88s]   Median of sites across all regions: 33
+[02/13 08:36:02     88s] @file 51: close $pipe
+[02/13 08:36:02     88s] #@ End verbose source scripts/exploitable_regions.tcl
+[02/13 08:36:02     88s] @file 70:
+[02/13 08:36:02     88s] @file 71: # routing track utilization
+[02/13 08:36:02     88s] @file 72: # NOTE M1 is skipped (even when explicitly setting "-layer 1:10") because M1 is not made available for routing in lib files
+[02/13 08:36:02     88s] @file 73: report_route -include_regular_routes -track_utilization > reports/track_utilization.rpt
+[02/13 08:36:02     93s] @file 74:
+[02/13 08:36:02     93s] @file 75: ####
+[02/13 08:36:02     93s] @file 76: # mark done; exit
+[02/13 08:36:02     93s] @file 77: ####
+[02/13 08:36:02     93s] @file 78:
+[02/13 08:36:02     93s] @file 79: date > DONE.inv_checks
+[02/13 08:36:02     93s] @file 80: exit
+[02/13 08:36:02     93s] 
+[02/13 08:36:02     93s] *** Memory Usage v#1 (Current mem = 1526.719M, initial mem = 395.367M) ***
+[02/13 08:36:02     93s] 
+[02/13 08:36:02     93s] *** Summary of all messages that are not suppressed in this session:
+[02/13 08:36:02     93s] Severity  ID               Count  Summary                                  
+[02/13 08:36:02     93s] WARNING   IMPDF-66             1  Floor plan has not been initialized. Ple...
+[02/13 08:36:02     93s] WARNING   IMPVFG-1198          1  The number of CPUs requested %d is large...
+[02/13 08:36:02     93s] ERROR     IMPPP-4418          21  The via for net %s in DPT layer %s does ...
+[02/13 08:36:02     93s] WARNING   IMPSP-1760           1  Buffer footprint does not have non-inver...
+[02/13 08:36:02     93s] WARNING   IMPSP-377          280  Center of Cell %s's %s(%d) %s does not f...
+[02/13 08:36:02     93s] WARNING   IMPOPT-801           1  Genus executable not found in PATH%s. In...
+[02/13 08:36:02     93s] WARNING   IMPTR-2108           2  For layer M%d, the gaps of %d out of %d ...
+[02/13 08:36:02     93s] *** Message Summary: 286 warning(s), 21 error(s)
+[02/13 08:36:02     93s] 
+[02/13 08:36:02     93s] --- Ending "Innovus" (totcpu=0:01:34, real=0:00:40.0, mem=1526.7M) ---
