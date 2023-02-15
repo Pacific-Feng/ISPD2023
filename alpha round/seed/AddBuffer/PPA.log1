@@ -1,0 +1,15 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.13-s100_1, built Fri Mar 4 14:32:31 PST 2022
+Options:	-nowin -files scripts/PPA_seed.tcl -log PPA 
+Date:		Thu Feb 16 02:06:10 2023
+Host:		ic51 (x86_64 w/Linux 3.10.0-1160.25.1.el7.x86_64) (16cores*64cpus*Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz 22528KB)
+OS:		CentOS Linux release 7.9.2009 (Core)
+
+License:
+		[02:06:10.321865] Configured Lic search path (20.02-s004): 5280@lstc
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.

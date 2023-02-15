@@ -1,0 +1,12 @@
+Undriven nets in Golden:
+  In module SEED_key_sched: p10  FE_OCPN17_subkey_10  FE_OFN5_subkey_34  
+    subkey[16]  subkey[1]
+Undriven pins in Golden:
+  In module SEED_key_sched: subkey[16]  subkey[1]  FE_OFN5_subkey_34  
+    FE_OCPN17_subkey_10  p10
+Undriven nets in Revised:
+  In module SEED_key_sched: p10  FE_OCPN17_subkey_10  FE_OFN5_subkey_34  
+    subkey[16]  subkey[1]
+Undriven pins in Revised:
+  In module SEED_key_sched: subkey[16]  subkey[1]  FE_OFN5_subkey_34  
+    FE_OCPN17_subkey_10  p10
