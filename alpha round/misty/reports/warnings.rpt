@@ -1,0 +1,3 @@
+ISPD23 -- WARNING: LEC: Net output floating issues: 1 -- see lec.log for more details.
+ISPD23 -- WARNING: Innovus: Basic routing issues: 491 -- see *.conn.rpt and floating_signals.rpt for more details.
+ISPD23 -- WARNING: Innovus: Placement and/or routing issues: 21 -- see check_design.rpt and check.logv for more details.

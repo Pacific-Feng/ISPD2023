@@ -1,0 +1,113 @@
+ISPD23 Contest: Advanced Security Closure of Physical Layouts
+=============================================================
+
+This benchmark suite is part of the ISPD23 contest. Please see https://wp.nyu.edu/ispd23_contest/ for more details.
+
+Note: use of a Linux OS is recommended for handling this zip archive, as it makes use of symbolic links which are not necessarily supported by zip tools in other OS.
+
+Type of benchmark:
+-------------------
+- Alpha round
+
+Folder structure:
+-------------------
+- scripts
+	- Symbolic links to $root/_scripts folder
+	- Evaluation scripts
+	- Same version as employed in the official evaluation backend
+	- Can be run at your end also; see 'Scripts usage' below for more details
+
+- ASAP7
+	- Symbolic links to $root/_ASAP7 folders
+	- Relevant library files
+	- Typical corner only
+	- Same version as employed in the official evaluation backend
+	- This release already contains the latest version of the files as taken from https://github.com/Centre-for-Hardware-Security/asap7_reference_design
+
+- db
+	- Innovus database for physical design following the reference flow in https://github.com/Centre-for-Hardware-Security/asap7_reference_design
+	- Generated using Innovus 20.11-s130_1
+
+- design.assets
+	- Assets: flip-flops holding sensitive data, representing potential targets for Trojans
+	- Note that assets are derived from netlist based on their function and sensitivity. For example, flip-flops holding the secret key are considered as assets.
+	- Note that special characters are escaped in the same way as they are in the DEF file, not as in the Verilog file.
+
+- design.def and design.v
+	- Post-route design file
+	- Corresponding netlist file
+	- Underlying RTL sourced by TalTech team; available upon request
+
+- design.sdc
+	- SDC file for timing analysis
+	- As used for timing closure during physical design
+	- Does include additional output delays, to mimick impact of pad cells, system integration, etc. 
+
+- reports/ -- Reports for layout evaluation as obtained for the baseline layouts
+	- checks_summary.rpt: Summary of metrics
+	- *.checkPin.rpt: Pin checks, obtained using Innovus command 'check_pin_assignment'
+	- *.conn.rpt: Connectivity checks, obtained using Innovus command 'check_connectivity'
+		- NOTE: This report contains various IMPVFC-94 errors which are false positives related to VSS, VDD dangling wires at M1, M2.
+	- *.geom.rpt: DRC checks, obtained using Innovus command 'check_drc'
+	- area.rpt: Die area, obtained using Innovus command 'get_db current_design .bbox.area'
+	- check_equivalence.rpt: Equivalence checks, obtained using LEC commands 'report verification', 'report statistics', 'report unmapped points', 'report compare data'
+		- NOTE: This report is only an example; it is not meaningful as it is generated while checking the baseline layout against itself.
+	- check_pins.rpt: Pins check regarding their placement at left and right boundaries, obtained using scripts/check_pins.sh
+		- NOTE: This report is only an example; it is not meaningful as it is generated while checking the baseline layout, which passes these checks by definition.
+	- check_pins.DEF_orig.data: Data for pin locations of the baseline layout.
+		- NOTE: This is not an actual report. It is only used for faster processing of scripts/check_pins.sh and included in the release so that running
+		scripts/checks_pins.sh benefits readily from that option.
+	- check_stripes.rpt: Checks on PDN stripes, obtained using scripts/check_stripes_*_stylus.tcl
+	- check_design.rpt: Placement and routing checks, obtained using Innovus command 'check_design -type {place route}'
+		- NOTE: This report contains 21 IMPPP-4418 errors which are false positives related to VSS, VDD via alignment failures in upper metal layers.
+	- track_utilization.rpt: Track utilization checks, obtained using Innovus command 'report_route -include_regular_routes -track_utilization'
+	- floating_signals.rpt: Connectivity checks, obtained using LEC command 'report floating signals'
+	- power.rpt: Power checks, obtained using Innovus command 'report_power'
+	- timing.rpt: Timing checks, obtained using Innovus command 'report_timing_summary'
+	- exploitable_regions.rpt: Exploitable regions checks, obtained using codes provided in $root/_scripts/_cpp and scripts/exploitable_regions.tcl
+	- scores.rpt: Scores, obtained using scripts/scores.sh
+		- NOTE: This report is only an example; it is not meaningful as it is generated while scoring the baseline layout against itself.
+	- warnings.rpt: Warnings, obtained using custom scripts in the backend.
+
+Scripts usage:
+-------------------
+- IMPORTANT: Files are organized such that you must invoke scripts directly from this main folder
+- IMPORTANT: Before the 1st run of check.tcl, you need to compile the C++ code in the $root/_scripts/_cpp folder (which is invoked via exploitable_regions.tcl, sourced in check.tcl).
+
+- Design checks using Innovus: 'innovus -nowin -stylus -files scripts/checks.tcl -log checks'
+- Design checks using Conformal/LEC: 'lec_64 -nogui -xl -dofile scripts/lec.do | tee lec.log'
+- PPA evaluation using Innovus: 'innovus -nowin -files scripts/PPA.tcl -log PPA'
+
+- NOTE: We understand that metrics reported by design evaluation scripts may differ from numbers reported during running some regular design flow run at your end, even when using
+the same reference flow/commands as in the provided database. We think this is because of a) different tool versions used and b) loading the DEF and re-evaluating the design
+without the full, original database can result in some mismatches for internal commands/procedures. We have thoroughly studied the tool behavior, considering different versions,
+different formats (stylus versus regular), different commands, different order of commands, different library files (NLDM versus CCS). The provided scripts do match the
+numbers reported during regular design flows best across all configurations we have explored.
+
+- NOTE: Scripts will be run with following tool versions for official evaluation:
+	- Innovus 21.13-s100_1, stylus format
+	- LEC/Conformal 22.10-s300
+	- As indicated, running the scripts with different tool versions at your end may provide different numbers.
+
+Changelog:
+-------------------
+- v1.0, Dec 13 2022: Initial release
+- v1.1, Dec 21 2022: Minor cleanup: dropped unsed ASAP7/asap7sc7p5t_28_R_4x_220121a.lef
+- v1.2, Dec 23 2022: Added scripts/scores.sh
+- v1.3, Dec 28 2022: Added scripts/check_pins.sh
+- v1.4, Dec 29 2022: Updates scripts/check_pins.sh; added related data file reports/check_pins.DEF_orig.data; added headers to scripts/ files
+- v1.5, Dec 30 2022: Added scripts/check_stripes_*_stylus.tcl; related and further updates scripts/ files; added reports/check_stripes.rpt and other example reports/ files; related update README file
+- v2.0, Jan 04 2023: Revised PDN structures; related updates all design files and all report files
+- v2.1, Jan 06 2023: Updated sha256 design files and report files; updates and code cleanups scripts/check_pins.sh
+- v3.0, Feb 10 2023: Fix timing evaluation: drop latency.sdc files -- these are only applicable for the baseline layouts, but not for any revision of the design by participants, and should thus not
+			be considered ; related updates scripts/check.tcl; refactoring scripts/check.tcl into scripts/checks.tcl and scripts/PPA.tcl -- the timing evaluation as previously implemented
+			in scripts/check.tcl is deprecated as it's inaccurate w/o latency.sdc files; related updates scripts/mmmc.tcl; related updates all timing, power, and scores report files 
+
+Website, contact:
+-------------------
+- Website:
+	https://wp.nyu.edu/ispd23_contest/
+- Organizers:
+	Johann Knechtel (NYUAD), Mohammad Eslami (TalTech), Ozgur Sinanoglu (NYUAD), Ramesh Karri (NYU), Samuel Pagliarini (TalTech)
+- Contact email:
+	ispd23_contest@nyu.edu
