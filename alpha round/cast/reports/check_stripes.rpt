@@ -1,0 +1,62 @@
+PDN stripes checks
+==================
+Check by area
+-------------
+M2 ---- VDD  ---> valid
+M2 ---- VSS  ---> valid
+M3 ---- VDD  ---> valid
+M3 ---- VSS  ---> valid
+M4 ---- VDD  ---> valid
+M4 ---- VSS  ---> valid
+M5 ---- VDD  ---> valid
+M5 ---- VSS  ---> valid
+M6 ---- VDD  ---> valid
+M6 ---- VSS  ---> valid
+M7 ---- VDD  ---> valid
+M7 ---- VSS  ---> valid
+M8 ---- VDD  ---> valid
+M8 ---- VSS  ---> valid
+M9 ---- VDD  ---> valid
+M9 ---- VSS  ---> valid
+Final result: valid
+
+Check by coordinates
+--------------------
+M2 ---- VDD  ---> valid ---- valid
+M2 ---- VSS  ---> valid ---- valid
+M3 ---- VDD  ---> valid ---- valid
+M3 ---- VSS  ---> valid ---- valid
+M4 ---- VDD  ---> valid ---- valid
+M4 ---- VSS  ---> valid ---- valid
+M5 ---- VDD  ---> valid ---- valid
+M5 ---- VSS  ---> valid ---- valid
+M6 ---- VDD  ---> valid ---- valid
+M6 ---- VSS  ---> valid ---- valid
+M7 ---- VDD  ---> valid ---- valid
+M7 ---- VSS  ---> valid ---- valid
+M8 ---- VDD  ---> valid ---- valid
+M8 ---- VSS  ---> valid ---- valid
+M9 ---- VDD  ---> valid ---- valid
+M9 ---- VSS  ---> valid ---- valid
+Final result: valid
+
+Check by box width
+------------------
+M2 ---- VDD  ---> valid
+M2 ---- VSS  ---> valid
+M3 ---- VDD  ---> valid
+M3 ---- VSS  ---> valid
+M4 ---- VDD  ---> valid
+M4 ---- VSS  ---> valid
+M5 ---- VDD  ---> valid
+M5 ---- VSS  ---> valid
+M6 ---- VDD  ---> valid
+M6 ---- VSS  ---> valid
+M7 ---- VDD  ---> valid
+M7 ---- VSS  ---> valid
+M8 ---- VDD  ---> valid
+M8 ---- VSS  ---> valid
+M9 ---- VDD  ---> valid
+M9 ---- VSS  ---> valid
+Final result: valid
+

@@ -1,0 +1,58 @@
+Metrics' weights:
+	des_pwr         : (1/3)
+	sec_ti_sts_sum  : 0.5
+	des_area_die    : 1.0
+	des_prf_WNS_hld : 0.5
+	sec_ti_fts      : 0.5
+	des             : 0.5
+	des_area        : (1/3)
+	sec_ti          : 1.0
+	sec             : 0.5
+	sec_ti_sts_max  : (1/3)
+	des_pwr_tot     : 1.0
+	sec_ti_fts_sum  : 1.0
+	des_prf         : (1/3)
+	sec_ti_sts_med  : (1/6)
+	sec_ti_sts      : 0.5
+	des_prf_WNS_set : 0.5
+
+Baseline numbers (raw, not weighted yet):
+	sec_ti_sts_sum  : 147359
+	des_area_die    : 85989.6976
+	des_prf_WNS_hld : 18.216
+	sec_ti_sts_max  : 139439
+	des_pwr_tot     : 16.88475223
+	sec_ti_fts_sum  : 62.44
+	sec_ti_sts_med  : 30
+	des_prf_WNS_set : 25.493
+
+Submission numbers (raw, not weighted yet):
+	sec_ti_sts_sum  : 146826
+	des_area_die    : 85989.6976
+	des_prf_WNS_hld : 19.136
+	sec_ti_sts_max  : 138741
+	des_pwr_tot     : 16.92614732
+	sec_ti_fts_sum  : 62.39
+	sec_ti_sts_med  : 30
+	des_prf_WNS_set : 25.113
+
+Score components (not weighted):
+	sec_ti_sts_sum  : .996382
+	des_prf_WNS_hld : .951923
+	des_area_die    : 1.000000
+	sec_ti_sts_max  : .994994
+	des_pwr_tot     : 1.002451
+	sec_ti_fts_sum  : .999199
+	sec_ti_sts_med  : 1.000000
+	des_prf_WNS_set : 1.015131
+
+Scores (weighted; last digit subject to rounding):
+	des_pwr         : 1.002451
+	OVERALL         : 0.996593
+	sec_ti_fts      : 0.999199
+	des             : 0.995324
+	des_area        : 1.000000
+	sec             : 0.997860
+	sec_ti          : 0.997860
+	des_prf         : 0.983526
+	sec_ti_sts      : 0.996521
